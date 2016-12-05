@@ -28,13 +28,4 @@ var_dump($document->getStatus()->getName());
 
 exit();
 
-// $userRepository->save($user);
-// $document = new Document(DocumentType::INSTRUCTION(), $user);
-// $documentRepository->save($document);
-
-$user = $UserRepository->load(Uuid::fromString('305e7fe7-ea10-4a91-a3e5-2ab7351290d6'));
-$document = $DocumentRepository->load(new \DocFlow\Domain\Document\DocumentNumber('3-1479738154'));
-
-var_dump($user->getName());
-var_dump($document);
 

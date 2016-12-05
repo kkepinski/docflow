@@ -29,23 +29,18 @@ class Document
      */
     private $author;
 
+    /**
+     * @var string
+     */
     private $title;
 
     private $sitesNumber;
 
     private $cost;
 
-    /**
-     * Document constructor.
-     *
-     * @param DocumentType $type            
-     * @param User $user            
-     */
-    public function __construct(DocumentType $type, User $author, NumberGenerator $numberGen, $sitesNumber)
+    public function __construct( DocumentType $type, User $author, NumberGenerator $generator, $sitesNumber )
     {
-        
-        $this->number = $numberGen->generateNumber($type);
-
+        $this->number = $generator->generateNumber( $type );
         $this->type = $type;
         $this->sitesNumber = $sitesNumber;
         $this->status = new DocumentStatus( DocumentStatus::DRAFT );
@@ -58,7 +53,6 @@ class Document
      */
     public function getNumber() 
     {
-
         return $this->number;
     }
 
@@ -86,16 +80,12 @@ class Document
         return $this->title;
     }
 
-    /**
-     *
-     * @return User
-     */
-    public function getAuthor()
+    public function getAuthor() : User
     {
         return $this->author;
     }
 
-    public function changeTitle($title)
+    public function setTitle($title)
     {
         $this->title = $title;
     }
