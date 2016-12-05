@@ -1,0 +1,13 @@
+{
+  "autoload": {
+    "psr-4": {
+      "": "src/"
+    }
+  },
+  "require": {
+    "ramsey/uuid": "^3.5",
+    "esky/enum": "^1.1",
+    "knplabs/gaufrette": "^0.2.1",
+    "moneyphp/money": "^3.0"
+  }
+}
